@@ -18,10 +18,4 @@ public class Course implements Comparable{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
-	
-	
-	
-	
-	
 }

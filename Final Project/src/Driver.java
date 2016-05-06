@@ -8,20 +8,14 @@ public class Driver {
     static Scanner in = new Scanner(System.in);
     static Random random = new Random();
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		        
-		        
-		        
-		        
+
 		                int selection = -1;
 		                
 		                while(selection != 0) {
 		                        System.out.println("What to do?");
 		                        System.out.println("-----------");
-		                        System.out.println("3 - Course");
-		                        System.out.println("2 - Teacher");
-		                        System.out.println("1 - Student");
+		                        System.out.println("2 - Course");
+		                        System.out.println("1 - Person");
 		                        System.out.println("0 - Exit");
 		                        System.out.println("-----------");
 		                        System.out.print("Your choice: ");
@@ -39,27 +33,33 @@ public class Driver {
 		        public static void handleMainRoutes(int selection) {
 		                switch(selection) {
 		                case 1:
-		                        createHeroes(); 
+		                        createPerson(); 
 		                        break;
 		                case 2:
-	                        createHeroes(); 
-	                        break;
-		                case 3:
-	                        createHeroes(); 
+	                        createCourse(); 
 	                        break;
 		                default:
 		                        break;
 		                }
 		        }
 		        
-		        public static void createHeroes() {
+		        public static void createCourse() {
+	                System.out.println("Course Creation");
+	                System.out.println("----------------");
+	                System.out.print("Enter a course id: ");
+	                String name = in.next();
+	                Course c = new Course(name);
+	                Person.add(c);
+	        }
+		        
+		        public static void createPerson() {
 		                int selection = -1;
 		                
 		                while(selection != 0) {
 		                        System.out.println("Which hero?");
 		                        System.out.println("-----------");
-		                        System.out.println("1 - Warrior");
-		                        System.out.println("2 - Wizard");
+		                        System.out.println("1 - Teacher");
+		                        System.out.println("2 - Student");
 		                        System.out.println("0 - Exit");
 		                        System.out.println("-----------");
 		                        System.out.print("Your choice: ");
@@ -71,10 +71,10 @@ public class Driver {
 		        public static void handleHeroCreationRoutes(int selection) {
 		                switch(selection) {
 		                case 1:
-		                        createWarrior();
+		                        createTeacher();
 		                        break;
 		                case 2:
-		                        createWizard();
+		                        createStudent();
 		                        break;
 		                default:
 		                        break;
@@ -82,21 +82,21 @@ public class Driver {
 		        }
 		        
 		        public static void createStudent() {
-		                System.out.println("Warrior Creation");
+		                System.out.println("Student Creation");
 		                System.out.println("----------------");
 		                System.out.print("Enter a Name: ");
 		                String name = in.next();
-		                Warrior w = new Warrior(name);
-		                heroes.add(w);
+		                Student s = new Student(name);
+		                Person.add(s);
 		        }
 		        
 		        public static void createTeacher() {
-		                System.out.println("Wizard Creation");
+		                System.out.println("Teacher Creation");
 		                System.out.println("----------------");
 		                System.out.print("Enter a Name: ");
 		                String name = in.next();
-		                Wizard w = new Wizard(name);
-		                heroes.add(w);
+		                Teacher t = new Teacher(name);
+		                Person.add(t);
 		        }
 		}}
 
