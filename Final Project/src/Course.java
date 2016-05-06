@@ -7,6 +7,11 @@ public class Course implements Comparable{
 	List<Student> roster;
 	Teacher Instructor;
 	
+	
+	public Course(String name){
+		
+	}
+	
 	@Override
 	public String toString(){
 		return courseID.toString();

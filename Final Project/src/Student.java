@@ -1,7 +1,13 @@
+import java.util.Random;
 import java.util.UUID;
 
 public 	class Student extends AbstractPerson implements Comparable{
+	Random random = new Random();
 	UUID StudentID;
+	
+	public Student(String firstname, String lastname){
+		
+	}
 	
 	@Override
 	public String toString(){

@@ -5,8 +5,10 @@ import java.util.Scanner;
 
 public class Driver {
 	static List<AbstractPerson> Person = new ArrayList<AbstractPerson>();
+	static List<Course> Course = new ArrayList<Course>();
     static Scanner in = new Scanner(System.in);
     static Random random = new Random();
+    
 	public static void main(String[] args) {
 
 		                int selection = -1;
@@ -49,17 +51,17 @@ public class Driver {
 	                System.out.print("Enter a course id: ");
 	                String name = in.next();
 	                Course c = new Course(name);
-	                Person.add(c);
+	                Course.add(c);
 	        }
 		        
 		        public static void createPerson() {
 		                int selection = -1;
 		                
 		                while(selection != 0) {
-		                        System.out.println("Which hero?");
+		                        System.out.println("Which type of Person?");
 		                        System.out.println("-----------");
-		                        System.out.println("1 - Teacher");
-		                        System.out.println("2 - Student");
+		                        System.out.println("2 - Teacher");
+		                        System.out.println("1 - Student");
 		                        System.out.println("0 - Exit");
 		                        System.out.println("-----------");
 		                        System.out.print("Your choice: ");
@@ -71,10 +73,10 @@ public class Driver {
 		        public static void handleHeroCreationRoutes(int selection) {
 		                switch(selection) {
 		                case 1:
-		                        createTeacher();
+		                        createStudent();
 		                        break;
 		                case 2:
-		                        createStudent();
+		                        createTeacher();
 		                        break;
 		                default:
 		                        break;
@@ -84,20 +86,21 @@ public class Driver {
 		        public static void createStudent() {
 		                System.out.println("Student Creation");
 		                System.out.println("----------------");
-		                System.out.print("Enter a Name: ");
-		                String name = in.next();
-		                Student s = new Student(name);
+		                System.out.print("Enter a firstName: ");
+		                String firstname = in.next();
+		                System.out.print("Enter a last Name: ");
+		                String lastname = in.next();
+		                Student s = new Student(firstname, lastname);
 		                Person.add(s);
 		        }
 		        
 		        public static void createTeacher() {
 		                System.out.println("Teacher Creation");
 		                System.out.println("----------------");
-		                System.out.print("Enter a Name: ");
-		                String name = in.next();
-		                Teacher t = new Teacher(name);
+		                String firstname = in.next();
+		                System.out.print("Enter a last Name: ");
+		                String lastname = in.next();
+		                Teacher t = new Teacher(firstname, lastname);
 		                Person.add(t);
 		        }
-		}}
-
-}
+	}
