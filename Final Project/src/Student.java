@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.UUID;
 
-public 	class Student extends AbstractPerson implements Comparable{
+public 	class Student extends AbstractPerson implements Comparable<Person>{
 	Random random = new Random();
 	UUID StudentID;
 	
@@ -16,7 +16,7 @@ public 	class Student extends AbstractPerson implements Comparable{
 	
 	
 	@Override
-	public int compareTo(Object arg0) {
+	public int compareTo(Object Person) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
