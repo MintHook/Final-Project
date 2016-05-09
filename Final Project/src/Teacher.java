@@ -3,7 +3,7 @@ import java.util.UUID;
 public 	class Teacher extends AbstractPerson implements Comparable{
 	UUID TeacherID;
 	
-	public Teacher(String firstname, String lastname){
+	public Teacher(String firstname, String lastname, String c0urse){
 		
 	}
 	

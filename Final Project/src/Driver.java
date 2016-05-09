@@ -4,7 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Driver {
-	static List<AbstractPerson> Person = new ArrayList<AbstractPerson>();
+	static List<AbstractPerson> Teacher = new ArrayList<AbstractPerson>();
+	static List<AbstractPerson> Student = new ArrayList<AbstractPerson>();
 	static List<Course> Course = new ArrayList<Course>();
 	static Scanner in = new Scanner(System.in);
 	static Random random = new Random();
@@ -25,9 +26,9 @@ public class Driver {
 			handleMainRoutes(selection);
 		}
 
-		for (int i = 0; i < Person.size(); i++) {
-			System.out.println(Person.get(i).toString());
-		}
+		//for (int i = 0; i < Person.size(); i++) {
+			//System.out.println(Person.get(i).toString());
+		//}
 
 		in.close();
 	}
@@ -91,16 +92,32 @@ public class Driver {
 		System.out.print("Enter a last Name: ");
 		String lastname = in.next();
 		Student s = new Student(firstname, lastname);
-		Person.add(s);
+		Student.add(s);
 	}
 
 	public static void createTeacher() {
+		String c0urse = null;
 		System.out.println("Teacher Creation");
 		System.out.println("----------------");
 		String firstname = in.next();
 		System.out.print("Enter a last Name: ");
 		String lastname = in.next();
-		Teacher t = new Teacher(firstname, lastname);
-		Person.add(t);
+		System.out.println("Do you need the list of courses possible to teach?");
+		System.out.println("----------------");
+		String answer = in.next();
+		if (answer.equals("yes")){
+			System.out.println("1: History/n2: English/n3: Programming in Java/n4: Physics/n5: Robotics/n6: Math/n7: Other");
+			System.out.println("What class are you teaching?");
+			String course = in.next();
+			c0urse = course;
+		}else if (answer.equals("no")){
+			System.out.println("What class are you teaching?");
+			String course = in.next();
+			c0urse = course;
+		}else{
+			c0urse = null;
+		}
+		Teacher t = new Teacher(firstname, lastname, c0urse);
+		Teacher.add(t);
 	}
 }
