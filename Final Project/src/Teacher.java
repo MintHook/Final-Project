@@ -14,7 +14,7 @@ public 	class Teacher extends AbstractPerson implements Comparable{
 	
 	
 	@Override
-	public int compareTo(Object arg0) {
+	public int compareTo(Object Teacher) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
